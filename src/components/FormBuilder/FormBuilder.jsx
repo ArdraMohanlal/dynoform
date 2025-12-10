@@ -5,6 +5,7 @@ import ElementsSider from "../Sider/ElementsSider";
 import FormCanvas from './FormCanvas'
 import ElementEditor from "../ElementsEditor/ElementEditor";
 import { useFormStore } from "../../store/formStore";
+import Alert from '@mui/material/Alert';
 
 const generateUniqueId = () => `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -149,7 +150,15 @@ function FormBuilder() {
   };
 
   const saveGroup = () => {
-    if (!groupName.trim() || groupFields.length === 0) return;
+    if (!groupName.trim() && groupFields.length != 0){
+       <Alert  severity="danger">
+      Please Enter a group Name.
+    </Alert>
+      return;
+    } 
+       if ( groupFields.length === 0){
+      return;
+    } 
 
     const groupTemplate = {
       name: groupName.trim(),
