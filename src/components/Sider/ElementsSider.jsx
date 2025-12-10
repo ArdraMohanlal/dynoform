@@ -81,6 +81,7 @@ const ElementsSider = ({
           "& .Mui-selected": {
             color: theme.palette.primary.main,
           },
+          minHeight:68
         }}
       >
         <Tab icon={<LayersIcon />} label="Elements" />

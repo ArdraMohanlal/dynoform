@@ -42,9 +42,12 @@ const ElementEditor = ({
             ID: {selectedElement.id}
           </Typography>
         </Box>
-        <IconButton onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
+         {(isMobile || compact) && (
+  <IconButton onClick={onClose}>
+    <CloseIcon />
+  </IconButton>
+)}
+
       </Box>
 
       <Divider sx={{ mb: 3 }} />
